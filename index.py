@@ -1,11 +1,4 @@
 from flask import Flask, jsonify
-class DevelopmentConfig():
-  DEBUG = True
-
-
-config = {
-  'dev': DevelopmentConfig
-}
 
 app = Flask(__name__)
 # Configuracion
@@ -20,6 +13,5 @@ def endpoint_no_encontrado(error):
   return jsonify({'error': 'error', 'mensaje': 'el endpoint no existe.'})
 
 if __name__ == '__main__':
-  app.config.from_object(config['dev'])
   app.register_error_handler(404, endpoint_no_encontrado)
   app.run()
