@@ -13,4 +13,5 @@ def endpoint_no_encontrado(error):
   return jsonify({'error': 'error', 'mensaje': 'el endpoint no existe.'})
 
 application.register_error_handler(404, endpoint_no_encontrado)
-application.run()
+if __name__ == '__main__':
+  application.run()
