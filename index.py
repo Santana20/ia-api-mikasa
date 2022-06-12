@@ -8,6 +8,9 @@ config = {
 }
 
 app = Flask(__name__)
+# Configuracion
+app.secret_key = '123456'
+
 
 @app.route("/", methods=['GET'])
 def hello_world():
