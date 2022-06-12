@@ -1,5 +1,11 @@
 from flask import Flask, jsonify
-from config import config
+class DevelopmentConfig():
+  DEBUG = True
+
+
+config = {
+  'dev': DevelopmentConfig
+}
 
 app = Flask(__name__)
 
